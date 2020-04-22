@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "transporte-app": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "transporte-app"
+    }
+  },
+  "defaultProject": "transporte-app",
+  "cli": {
+    "analytics": "65dfe3cc-949e-46e1-bad5-38fcc24adc5e"
+  }
 }
