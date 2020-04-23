@@ -8,7 +8,7 @@ import { GLOBAL } from './services/global';
 })
 
 export class AppComponent {
-  title = 'Transporte';
+  title = 'Transportee';
   header_color: string;
 
   constructor() {
