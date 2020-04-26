@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './services/authentication.service'
 import { GLOBAL } from './services/global';
 
 @Component({

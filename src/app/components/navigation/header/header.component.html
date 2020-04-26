@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div>
+        <a routerLink="/">Axial</a>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li *ngIf="auth.isLoggedIn()">
+                <a routerLink="/producto">Productos</a>
+            </li>
+            <li *ngIf="!auth.isLoggedIn()">
+                <a routerLink="/register">Register</a>
+            </li>
+            <li *ngIf="auth.isLoggedIn()">
+                <a routerLink="" (click)="auth.logout()">Logout</a>
+            </li>
+            <li *ngIf="!auth.isLoggedIn()">
+                <a routerLink="/login">Login</a>
+            </li>
+            <li *ngIf="auth.isLoggedIn()">
+                <a routerLink="/profile">{{ auth.getUserDetails()?.first_name }}</a>
+            </li>
+        </ul>
+    </div>
+</mat-toolbar>

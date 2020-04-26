@@ -1,6 +1,35 @@
-<div class="col-lg-10 col-lg-offset-1">
-    <div class="jumbotron">
-        <h2>{{titulo}}</h2>
-
-    </div>
-</div>
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card fxFlex="500px" fxFlex.xs="100%">
+      <mat-card-title>{{titulo}}</mat-card-title>
+      <form [formGroup]="productoForm" autocomplete="off" novalidate (ngSubmit)="crearProducto(productoForm.value)" fxLayout="column wrap"
+        fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-card-content>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Nombre" formControlName="nombre" id="nombre">
+            <mat-hint align="end">Not more then 40 characters long.</mat-hint>
+            <mat-error *ngIf="hasError('nombre', 'required')">Nombre is required</mat-error>
+            <mat-error *ngIf="hasError('nombre', 'maxlength')">You have more than 40 characters</mat-error>
+          </mat-form-field>          
+          <mat-form-field>
+            <input matInput type="text" placeholder="Descripción" formControlName="descripcion">
+            <mat-hint align="end">Not more then 50 characters long.</mat-hint>
+            <mat-error *ngIf="hasError('descripcion', 'required')">Descripción is required</mat-error>
+            <mat-error *ngIf="hasError('descripcion', 'maxlength')">You have more than 50 characters</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Precio" formControlName="precio">
+            <mat-error *ngIf="hasError('precio', 'required')">Precio is required</mat-error>            
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Imagen" formControlName="imagen">
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <mat-card-actions align="center">
+            <button mat-raised-button color="primary" [disabled]="!productoForm.valid">Agregar</button>
+            <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+          </mat-card-actions>
+        </mat-card-actions>
+      </form>    
+    </mat-card>    
+ </section>
