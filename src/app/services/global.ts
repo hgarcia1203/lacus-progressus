@@ -1,4 +1,4 @@
 export var GLOBAL = {
-    url: 'https://axial-backend.herokuapp.com',
+    url: 'http://localhost:4000',
     header_color: '#1687A6'
 };
